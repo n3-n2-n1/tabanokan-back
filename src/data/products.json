@@ -1,0 +1,113 @@
+[
+    {
+      "id": "1",
+      "name": "Pantalones OX",
+      "description": "Pantalones estilo OX de corte urbano.",
+      "price": 29.99,
+      "images": ["/pants-ox.png"],
+      "collection": "KUL - Street",
+      "stock": 15,
+      "keywords": ["pantalones", "OX", "street", "urbano", "cómodo", "moda", "KUL"]
+    },
+    {
+      "id": "2",
+      "name": "Biggie Pants",
+      "description": "Pantalones Biggie anchos y cómodos.",
+      "price": 34.99,
+      "images": ["/biggie-pants.png"],
+      "collection": "KUL - Street",
+      "stock": 20,
+      "keywords": ["pantalones", "biggie", "ancho", "street", "moda", "cómodo", "KUL"]
+    },
+    {
+      "id": "3",
+      "name": "Camiseta OX",
+      "description": "Camiseta estilo OX en algodón.",
+      "price": 19.99,
+      "images": ["/camiseta-ox.png"],
+      "collection": "KUL - Street",
+      "stock": 25,
+      "keywords": ["camiseta", "OX", "algodón", "street", "urbano", "moda", "KUL"]
+    },
+    {
+      "id": "4",
+      "name": "Custom Pants Tribal",
+      "description": "Pantalones personalizados con diseño tribal.",
+      "price": 39.99,
+      "images": ["/custom-pants-tribal.png"],
+      "collection": "KUL - Street",
+      "stock": 10,
+      "keywords": ["pantalones", "tribal", "custom", "street", "moda", "KUL"]
+    },
+    {
+      "id": "5",
+      "name": "Poncho con capa",
+      "description": "Poncho de tejido grueso con capa integrada.",
+      "price": 49.99,
+      "images": ["/poncho-capa.png"],
+      "collection": "KUL - HC",
+      "stock": 8,
+      "keywords": ["poncho", "capa", "invierno", "grueso", "estilo", "moda", "KUL"]
+    },
+    {
+      "id": "6",
+      "name": "Poncho sin capa",
+      "description": "Poncho de tejido sin capa.",
+      "price": 44.99,
+      "images": ["/poncho-sin-capa.png"],
+      "collection": "KUL - HC",
+      "stock": 7,
+      "keywords": ["poncho", "tejido", "sin capa", "invierno", "estilo", "KUL"]
+    },
+    {
+      "id": "7",
+      "name": "Pants Vuelo",
+      "description": "Pantalones de vuelo con estilo moderno.",
+      "price": 34.99,
+      "images": ["/pants-vuelo.png"],
+      "collection": "KUL - HC",
+      "stock": 12,
+      "keywords": ["pantalones", "vuelo", "moderno", "street", "comodidad", "KUL"]
+    },
+    {
+      "id": "8",
+      "name": "Pants Trama Custom Rombo",
+      "description": "Pantalones con diseño de trama rombo.",
+      "price": 36.99,
+      "images": ["/pants-trama-rombo.png"],
+      "collection": "KUL - HC",
+      "stock": 10,
+      "keywords": ["pantalones", "rombo", "trama", "custom", "urbano", "KUL"]
+    },
+    {
+      "id": "9",
+      "name": "Falda Recta Camesu",
+      "description": "Falda recta de camesu.",
+      "price": 29.99,
+      "images": ["/falda-recta-camesu.png"],
+      "collection": "KUL - HC",
+      "stock": 6,
+      "keywords": ["falda", "recta", "camesu", "moda", "urbano", "KUL"]
+    },
+    {
+      "id": "10",
+      "name": "Body Superior con Capa",
+      "description": "Body de diseño superior con capa integrada.",
+      "price": 39.99,
+      "images": ["/body-capa.png"],
+      "collection": "KUL - HC",
+      "stock": 9,
+      "keywords": ["body", "capa", "elegante", "moda", "moderno", "KUL"]
+    },
+    {
+      "id": "11",
+      "name": "Buzo Suéter con Puffer",
+      "description": "Buzo suéter con diseño puffer para mayor calidez.",
+      "price": 49.99,
+      "images": ["/buzo-sweater-puffer.png"],
+      "collection": "KUL - HC",
+      "stock": 5,
+      "keywords": ["buzo", "puffer", "invierno", "cálido", "moda", "KUL"]
+    }
+  ]
+  

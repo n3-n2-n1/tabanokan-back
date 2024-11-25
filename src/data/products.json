@@ -1,22 +1,44 @@
 [
   {
     "id": "6bbc9c43-b882-4e6e-bebb-6cce27b5293d",
-    "name": "Pantalones OX",
-    "description": "Pantalones estilo OX de corte urbano.",
-    "price": 34900,
-    "images": ["/pants-ox.png"],
+    "name": "Conjunto OX Negro",
+    "description": "Conjunto OX de estilo urbano en color negro desgastado. Incluye una campera Half Face Zip Hoodie y un joggin Double Waistband. La campera cuenta con cierre metálico medio facial, doble bolsillo frontal y estampas DTF exclusivas. El joggin tiene doble cintura elástica regulable, bolsillos laterales y traseros, con un corte ancho y tiro medio para máxima comodidad. Diseñado para moda street y versatilidad.",
+    "price": 57900,
+    "images": ["/conjunto-ox-negro.png"],
     "collection": "KUL - Street",
-    "stock": 15,
-    "keywords": ["pantalones", "OX", "street", "urbano", "cómodo", "moda", "KUL"]
+    "stock": 10,
+    "keywords": [
+      "conjunto",
+      "OX",
+      "street",
+      "negro",
+      "desgastado",
+      "moda",
+      "KUL",
+      "urbano",
+      "campera",
+      "joggin"
+    ]
   },
   {
     "id": "e49e995d-f3a9-4288-8272-f727ccb3acb8",
-    "name": "Camiseta OX",
-    "description": "Camiseta estilo OX en algodón.",
-    "price": 23000,
-    "images": ["/camiseta-ox.png"],
+    "name": "Conjunto OX Blanco Cyan",
+    "description": "Conjunto OX de estilo urbano en color blanco con detalles en cyan. Incluye una campera Half Face Zip Hoodie y un joggin Double Waistband. La campera presenta cierre metálico medio facial, doble bolsillo frontal y estampas DTF modernas. El joggin cuenta con doble cintura elástica regulable, bolsillos laterales y traseros, con un corte ancho y tiro medio para mayor dinámica.",
+    "price": 57900,
+    "images": ["/conjunto-ox-blanco-cyan.png"],
     "collection": "KUL - Street",
-    "stock": 25,
-    "keywords": ["camiseta", "OX", "algodón", "street", "urbano", "moda", "KUL"]
+    "stock": 8,
+    "keywords": [
+      "conjunto",
+      "OX",
+      "street",
+      "blanco",
+      "cyan",
+      "moda",
+      "KUL",
+      "urbano",
+      "campera",
+      "joggin"
+    ]
   }
 ]

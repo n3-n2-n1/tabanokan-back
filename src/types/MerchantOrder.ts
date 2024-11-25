@@ -1,9 +1,4 @@
-// Una orden de compra puede tener estados segun el estatus de la transacción
-// La orden de compra fue creada y está pendiente de pago (status: "pending")
-// La orden de compra fue pagada y está pendiente de enviar (status: "approved")
-// La orden de compra fue enviada y está pendiente de recibir (status: "sent")
-
-export interface PurchaseOrder {
+export interface MerchantOrder {
   id: string;
   fullName: string;
   email: string;

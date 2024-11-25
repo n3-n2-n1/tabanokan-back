@@ -32,34 +32,12 @@
           "moda",
           "KUL"
         ],
-        "quantity": 5,
-        "total": 174500
-      },
-      {
-        "id": "e49e995d-f3a9-4288-8272-f727ccb3acb8",
-        "name": "Camiseta OX",
-        "description": "Camiseta estilo OX en algodón.",
-        "price": 23000,
-        "images": [
-          "/camiseta-ox.png"
-        ],
-        "collection": "KUL - Street",
-        "stock": 25,
-        "keywords": [
-          "camiseta",
-          "OX",
-          "algodón",
-          "street",
-          "urbano",
-          "moda",
-          "KUL"
-        ],
-        "quantity": 2,
-        "total": 46000
+        "quantity": 1,
+        "total": 34900
       }
     ],
-    "netAmount": 220500,
-    "status": "pending",
-    "id": "50bc3f1a-8891-4161-bc35-554d88ef6031"
+    "netAmount": 34900,
+    "status": "approved",
+    "id": "dcc36cdc-a5b4-4e16-b480-10831c8ab1a5"
   }
 ]

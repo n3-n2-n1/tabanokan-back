@@ -41,9 +41,15 @@ export function verifySignature(
   const sha = hmac.digest("hex");
 
   if (sha !== parsedSignature.signature)
-    throw new Error(
-      "The calculated signature does not match the expected signature"
-    );
+    return {
+      valid: false,
+      calculated: sha,
+      expected: parsedSignature.signature,
+    };
 
-  return true;
+  return {
+    valid: true,
+    calculated: sha,
+    expected: parsedSignature.signature,
+  };
 }

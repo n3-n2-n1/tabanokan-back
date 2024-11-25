@@ -2,6 +2,7 @@ import "dotenv/config";
 
 import express from "express";
 import paymentsRouter from "./routes/payments.router";
+import productsRouter from "./routes/products.router";
 
 const app = express();
 const PORT = process.env.PORT || 3080;
@@ -9,6 +10,8 @@ const PORT = process.env.PORT || 3080;
 console.log(process.env.MP_ACCESS_TOKEN);
 
 app.use(express.json());
+
+app.use("/products", productsRouter);
 app.use("/payments", paymentsRouter);
 
 app.listen(PORT, () => {

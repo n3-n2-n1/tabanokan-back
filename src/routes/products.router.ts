@@ -1,15 +1,16 @@
 import { Router } from "express";
 import products from "../data/products.json";
+import { ProductsService } from "../services/products.service";
 
 const productRouter = Router();
+const productsService = new ProductsService();
 
-productRouter.get("/", (req, res) => {
-  res.send(products);
+productRouter.get("/", async (req, res) => {
+  res.send(await productsService.getAll());
 });
-productRouter.post("/", (req, res) => {});
 
-productRouter.get("/:id", (req, res) => {});
-productRouter.put("/:id", (req, res) => {});
-productRouter.delete("/:id", (req, res) => {});
+productRouter.get("/:id", async (req, res) => {
+  res.send(await productsService.getById(req.params.id));
+});
 
 export default productRouter;

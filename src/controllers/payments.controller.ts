@@ -5,6 +5,7 @@ import { ProductsService } from "../services/products.service";
 import { Payment, Preference } from "mercadopago";
 import { mercadopagoClient, verifySignature } from "../utils/mercadoPago.utils";
 import { MerchantOrdersService } from "../services/merchantOrders.service";
+import { EmailService } from "../services/email.service";
 
 declare module "http" {
   interface IncomingHttpHeaders {
@@ -15,6 +16,7 @@ declare module "http" {
 
 const productsService = new ProductsService();
 const merchantOrderService = new MerchantOrdersService();
+const mailService = new EmailService();
 
 export class PaymentController {
   static async createPreference(req: Request, res: Response): Promise<void> {
@@ -98,6 +100,8 @@ export class PaymentController {
       const { id } = req.body;
       const { id: paymentId } = req.body.data;
 
+      console.log("Webhook recibido", req.body);
+
       // TODO: Revisar esto para asegurar de que el hook sea accionado por MercadoPago
       // const verifySignatureResult = verifySignature(id, signature, requestId);
 
@@ -114,12 +118,42 @@ export class PaymentController {
           `Pago aprobado para la orden de compra: ${payment.metadata.merchant_order_id}`
         );
 
-        await merchantOrderService.update(payment.metadata.merchant_order_id, {
-          status: "approved",
-        });
+        const merchantOrder = await merchantOrderService.getById(
+          payment.metadata.merchant_order_id
+        );
 
-        // TODO: Enviar email de confirmación de pago al cliente
-        // TODO: Enviar email de confirmación de pedido a la tienda
+        if (merchantOrder) {
+          await merchantOrderService.update(
+            payment.metadata.merchant_order_id,
+            {
+              status: "approved",
+            }
+          );
+
+          // Enviar email de confirmación de pago al cliente
+          mailService.sendTemplateEmail(
+            merchantOrder.email,
+            "Gracias por comprar en Tabanokan!",
+            "./src/views/client-order-recived.html",
+            {
+              name: merchantOrder.fullName.split(" ")[0],
+              products: merchantOrder.products,
+              totalPrice: merchantOrder.netAmount,
+            }
+          );
+
+          // Enviar email de confirmación de pedido a la tienda
+          mailService.sendTemplateEmail(
+            process.env.STORE_ORDER_MAIL || "",
+            "Nuevo pedido recibido",
+            "./src/views/store-order-recived.html",
+            {
+              name: merchantOrder.fullName.split(" ")[0],
+              products: merchantOrder.products,
+              totalPrice: merchantOrder.netAmount,
+            }
+          );
+        }
       }
 
       res.status(200).send();

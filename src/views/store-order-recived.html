@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      .email-container {
+        max-width: 600px;
+        width: 100%;
+        margin: 40px auto;
+        background-color: #fff;
+      }
+
+      .header {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 32px;
+        margin: 0;
+        font-weight: 700;
+      }
+
+      .order-details {
+        padding: 30px;
+      }
+
+      .greeting {
+        font-size: 16px;
+        color: #333333;
+        margin: 0px;
+      }
+
+      .order-table {
+        font-size: 14px;
+        color: #333333;
+        border-collapse: collapse;
+        width: 100%;
+        margin: 25px 0px;
+      }
+
+      .order-table th,
+      .order-table td {
+        padding: 12px 20px;
+        text-align: left;
+        border-bottom: 1px solid #f4f4f4;
+      }
+
+      .order-table th {
+        background-color: #f9f9f9;
+        font-weight: bold;
+      }
+
+      .total-price {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        color: #e94e77;
+        margin-top: 20px;
+      }
+
+      .footer {
+        font-size: 12px;
+        color: #888888;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #e94e77;
+        text-decoration: none;
+      }
+      .footer p {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header -->
+      <div class="header">
+        <h1>Nuevo Pedido Recibido</h1>
+      </div>
+
+      <!-- Greeting -->
+      <div class="order-details">
+        <p class="greeting">
+          <b style="font-size: 16px">¡Nuevo pedido recibido!</b>
+          <br />
+          <br />
+          El cliente {{name}} ha realizado una compra. A continuación,
+          encontrarás los detalles del pedido.
+        </p>
+
+        <!-- Order Details -->
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td>{{product.name}}</td>
+              <td>{{product.quantity}}</td>
+              <td>{{product.price.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <!-- Total Price -->
+        <div class="total-price">Total: {{totalPrice.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}}</div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>
+          Si necesitas más información sobre el pedido, por favor contacta al
+          cliente directamente.
+        </p>
+        <p>&copy; 2024 Tabanokan. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </body>
+</html>

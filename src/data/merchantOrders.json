@@ -1,7 +1,7 @@
 [
   {
     "fullName": "Santiago de Nicolás",
-    "email": "santidenicolas@gmail.com",
+    "email": "santiago@denicolas.com.ar",
     "phone": "1151623055",
     "shipping": {
       "province": "Ciudad de Buenos Aires",
@@ -38,6 +38,47 @@
     ],
     "netAmount": 34900,
     "status": "approved",
-    "id": "dcc36cdc-a5b4-4e16-b480-10831c8ab1a5"
+    "id": "04584dfe-63bb-422a-b03b-5dbd641554f9"
+  },
+  {
+    "fullName": "Santiago de Nicolás",
+    "email": "santiago@denicolas.com.ar",
+    "phone": "1151623055",
+    "shipping": {
+      "province": "Ciudad de Buenos Aires",
+      "city": "Ciudad de Buenos Aires",
+      "street": "Austria",
+      "streetNumber": "2467",
+      "floor": "6",
+      "apartment": "A",
+      "postalCode": "1425"
+    },
+    "products": [
+      {
+        "id": "6bbc9c43-b882-4e6e-bebb-6cce27b5293d",
+        "name": "Pantalones OX",
+        "description": "Pantalones estilo OX de corte urbano.",
+        "price": 34900,
+        "images": [
+          "/pants-ox.png"
+        ],
+        "collection": "KUL - Street",
+        "stock": 15,
+        "keywords": [
+          "pantalones",
+          "OX",
+          "street",
+          "urbano",
+          "cómodo",
+          "moda",
+          "KUL"
+        ],
+        "quantity": 1,
+        "total": 34900
+      }
+    ],
+    "netAmount": 34900,
+    "status": "approved",
+    "id": "212a6fd7-688b-4224-a31a-a34fb3bcd572"
   }
 ]

@@ -1,7 +1,8 @@
 import * as fs from "fs/promises";
+import { v4 as uuidv4 } from "uuid";
 
 export interface JSONOrm<T> {
-  create(item: T): Promise<void>;
+  create(item: Omit<T, "id">): Promise<T>;
   read(id: string): Promise<T | undefined>;
   update(id: string, updates: Partial<T>): Promise<void>;
   delete(id: string): Promise<void>;
@@ -32,13 +33,12 @@ export class JSONOrmService<T extends { id: string }> implements JSONOrm<T> {
     await fs.writeFile(this.filePath, JSON.stringify(data, null, 2));
   }
 
-  async create(item: T): Promise<void> {
+  async create(item: Omit<T, "id">): Promise<T> {
     const items = await this.readJSON();
-    if (items.find((existing) => existing.id === item.id)) {
-      throw new Error(`Item with id "${item.id}" already exists`);
-    }
-    items.push(item);
+    const newItem: T = { ...item, id: uuidv4() } as T; // Agregamos un UUID como ID
+    items.push(newItem);
     await this.writeJSON(items);
+    return newItem;
   }
 
   async read(id: string): Promise<T | undefined> {

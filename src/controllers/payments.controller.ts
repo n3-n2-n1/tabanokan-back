@@ -29,21 +29,18 @@ export class PaymentController {
         })
       );
 
-      console.log(products);
+      const preference = await new Preference(mercadopagoClient).create({
+        body: {
+          items: products.map((product) => ({
+            id: product.id,
+            title: product.name,
+            quantity: product.quantity,
+            unit_price: product.price,
+          })),
+        },
+      });
 
-      // const preference = await new Preference(mercadopagoClient).create({
-      //   body: {
-      //     items: products.map((product) => ({
-      //       id: product.id,
-      //       title: product.name,
-      //       quantity: product.quantity,
-      //       unit_price: product.price,
-      //     })),
-      //   },
-      // });
-
-      // Por ahora solo enviamos una respuesta de prueba
-      // res.status(200).json(preference);
+      res.status(200).json(preference);
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error("Error al validar los datos:", error);

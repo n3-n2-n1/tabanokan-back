@@ -4,8 +4,10 @@ import { z } from "zod";
 import { ProductsService } from "../services/products.service";
 import { Preference } from "mercadopago";
 import { mercadopagoClient } from "../utils/mercadoPago.utils";
+import { PurchaseOrdersService } from "../services/purchaseOrders.service";
 
 const productsService = new ProductsService();
+const purchaseOrdersService = new PurchaseOrdersService();
 
 export class PaymentController {
   static async createPreference(req: Request, res: Response): Promise<void> {
@@ -38,6 +40,18 @@ export class PaymentController {
             unit_price: product.price,
           })),
         },
+      });
+
+      await purchaseOrdersService.create({
+        fullName: data.fullName,
+        email: data.email,
+        phone: data.phone,
+        shipping: data.shipping,
+        products: products,
+        netAmount: products.reduce(
+          (total, product) => total + product.total,
+          0
+        ),
       });
 
       res.status(200).json(preference);

@@ -1,0 +1,65 @@
+[
+  {
+    "fullName": "Santiago de Nicolás",
+    "email": "santidenicolas@gmail.com",
+    "phone": "1151623055",
+    "shipping": {
+      "province": "Ciudad de Buenos Aires",
+      "city": "Ciudad de Buenos Aires",
+      "street": "Austria",
+      "streetNumber": "2467",
+      "floor": "6",
+      "apartment": "A",
+      "postalCode": "1425"
+    },
+    "products": [
+      {
+        "id": "6bbc9c43-b882-4e6e-bebb-6cce27b5293d",
+        "name": "Pantalones OX",
+        "description": "Pantalones estilo OX de corte urbano.",
+        "price": 34900,
+        "images": [
+          "/pants-ox.png"
+        ],
+        "collection": "KUL - Street",
+        "stock": 15,
+        "keywords": [
+          "pantalones",
+          "OX",
+          "street",
+          "urbano",
+          "cómodo",
+          "moda",
+          "KUL"
+        ],
+        "quantity": 5,
+        "total": 174500
+      },
+      {
+        "id": "e49e995d-f3a9-4288-8272-f727ccb3acb8",
+        "name": "Camiseta OX",
+        "description": "Camiseta estilo OX en algodón.",
+        "price": 23000,
+        "images": [
+          "/camiseta-ox.png"
+        ],
+        "collection": "KUL - Street",
+        "stock": 25,
+        "keywords": [
+          "camiseta",
+          "OX",
+          "algodón",
+          "street",
+          "urbano",
+          "moda",
+          "KUL"
+        ],
+        "quantity": 2,
+        "total": 46000
+      }
+    ],
+    "netAmount": 220500,
+    "status": "pending",
+    "id": "50bc3f1a-8891-4161-bc35-554d88ef6031"
+  }
+]

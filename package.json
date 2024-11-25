@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/server.ts"
+    "dev": "nodemon ./src/main.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +17,12 @@
     "express": "^4.21.1",
     "fs": "^0.0.1-security",
     "mercadopago": "^2.0.15",
+    "nodemailer": "^6.9.16",
     "path": "^0.12.7"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
+    "@types/nodemailer": "^6.4.17",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2"
   }

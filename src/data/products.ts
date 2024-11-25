@@ -2,7 +2,7 @@
 import { Router, Request, Response } from "express";
 import fs from "fs";
 import path from "path";
-import { Product } from "../../types/Product";
+import { Product } from "../types/Product";
 
 const router = Router();
 const productsFilePath = path.join(__dirname, "../src/data/products.json");
@@ -54,7 +54,9 @@ router.put("/:id", (req: Request, res: Response) => {
     }
 
     const products: Product[] = JSON.parse(data);
-    const productIndex = products.findIndex((product) => product.id === productId);
+    const productIndex = products.findIndex(
+      (product) => product.id === productId
+    );
 
     if (productIndex === -1) {
       return res.status(404).json({ error: "Producto no encontrado" });
@@ -65,7 +67,9 @@ router.put("/:id", (req: Request, res: Response) => {
     fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
       if (err) {
         console.error("Error al escribir el archivo:", err);
-        return res.status(500).json({ error: "Error al actualizar el producto" });
+        return res
+          .status(500)
+          .json({ error: "Error al actualizar el producto" });
       }
       res.json(updatedProduct);
     });
@@ -83,15 +87,23 @@ router.delete("/:id", (req: Request, res: Response) => {
     }
 
     const products: Product[] = JSON.parse(data);
-    const updatedProducts = products.filter((product) => product.id !== productId);
+    const updatedProducts = products.filter(
+      (product) => product.id !== productId
+    );
 
-    fs.writeFile(productsFilePath, JSON.stringify(updatedProducts, null, 2), (err) => {
-      if (err) {
-        console.error("Error al escribir el archivo:", err);
-        return res.status(500).json({ error: "Error al eliminar el producto" });
+    fs.writeFile(
+      productsFilePath,
+      JSON.stringify(updatedProducts, null, 2),
+      (err) => {
+        if (err) {
+          console.error("Error al escribir el archivo:", err);
+          return res
+            .status(500)
+            .json({ error: "Error al eliminar el producto" });
+        }
+        res.status(204).send();
       }
-      res.status(204).send();
-    });
+    );
   });
 });
 

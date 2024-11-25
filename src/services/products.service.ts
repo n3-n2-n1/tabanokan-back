@@ -1,16 +1,12 @@
-import fs from "fs/promises";
-import { v4 as uuidv4 } from "uuid";
-import products from "../data/products.json";
-import { Product } from "../../types/Product";
 import path from "path";
+import { Product } from "../types/Product";
 import { JSONOrmService } from "./jsonorm.service";
-
-const productsFilePath = path.join(__dirname, "../data/products.json");
 
 export class ProductsService {
   private productsRepository: JSONOrmService<Product>;
 
   constructor() {
+    const productsFilePath = path.join(__dirname, "../data/products.json");
     this.productsRepository = new JSONOrmService<Product>(productsFilePath);
   }
 

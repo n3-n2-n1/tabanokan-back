@@ -18,7 +18,8 @@
     "fs": "^0.0.1-security",
     "mercadopago": "^2.0.15",
     "nodemailer": "^6.9.16",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
